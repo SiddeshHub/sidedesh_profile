@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Full Stack Java Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/animate-scroll-to@1.0.0/dist/animate-scroll-to.min.js"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Enhanced animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* New animations */
+        @keyframes slide-in-left {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slide-in-right {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fade-in-up {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scale-in {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes rotate-in {
+            0% { transform: rotate(-180deg) scale(0); opacity: 0; }
+            100% { transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-15deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Animation classes */
+        .animate-slide-in-left {
+            animation: slide-in-left 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slide-in-right 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            animation: scale-in 0.8s ease-out forwards;
+        }
+
+        .animate-rotate-in {
+            animation: rotate-in 0.8s ease-out forwards;
+        }
+
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        .animate-spin {
+            animation: spin 3s linear infinite;
+        }
+
+        .animate-wave {
+            animation: wave 2s infinite;
+        }
+
+        /* Enhanced hover effects */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Glass morphism effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animated gradient text */
+        .gradient-text {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 8s linear infinite;
+        }
+
+        /* Enhanced button effects */
+        .btn-hover-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hover-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn-hover-effect:hover::after {
+            transform: translateX(100%);
+        }
+
+        /* Enhanced card animations */
+        .card-animate {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-animate:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Progress bar animation */
+        .progress-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        /* Enhanced section transitions */
+        .section-transition {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section-transition.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #2563EB, #7C3AED);
+        }
+
+        /* Background patterns */
+        .bg-grid {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+                             linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 4rem 4rem;
+        }
+
+        /* Enhanced hover effects for cards */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animated background elements */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .animated-bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Enhanced text effects */
+        .text-glow {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 8s linear infinite;
+        }
+
+        /* Mobile menu animations */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+        }
+
+        #mobile-menu.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Mobile menu button with three dots */
+        #mobile-menu-button {
+            position: relative;
+            z-index: 50;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+
+        #mobile-menu-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        #mobile-menu-button.active {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60A5FA;
+        }
+
+        /* Show mobile menu button only on mobile devices */
+        @media (max-width: 768px) {
+            #mobile-menu-button {
+                display: flex !important;
+            }
+        }
+
+        /* Hide mobile menu button on larger screens */
+        @media (min-width: 769px) {
+            #mobile-menu-button {
+                display: none !important;
+            }
+        }
+
+        /* Mobile menu backdrop */
+        .mobile-menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        .mobile-menu-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#0EA5E9',
+                        accent: '#6366F1',
+                        dark: '#0F172A',
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        glow: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.6 }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gradient-to-br from-dark via-slate-900 to-indigo-900 text-white">
+
+    <header class="fixed w-full top-0 z-50 bg-gray-900/80 backdrop-blur-md">
+        <nav class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-blue-400">SB</div>
+                
+                <!-- Mobile menu button with three dots -->
+                <button id="mobile-menu-button" class="hidden md:hidden text-white p-2 hover:text-blue-400 transition-colors focus:outline-none">
+                    <div class="flex flex-col items-center justify-center w-8 h-8">
+                        <span class="text-4xl font-bold leading-none">⋮</span>
+                    </div>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden lg:flex space-x-8">
+                    <li><a href="#about" class="hover:text-blue-400 transition-colors">About</a></li>
+                    <li><a href="#education" class="hover:text-blue-400 transition-colors">Education</a></li>
+                    <li><a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a></li>
+                    <li><a href="#tools" class="hover:text-blue-400 transition-colors">Tools</a></li>
+                    <li><a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="lg:hidden hidden fixed top-16 right-4 w-64 bg-gray-900/95 backdrop-blur-md rounded-lg shadow-xl border border-gray-700/50">
+                <ul class="py-2">
+                    <li><a href="#about" class="block px-6 py-3 text-white hover:bg-blue-400/10 hover:text-blue-400 transition-colors border-b border-gray-700/50">About</a></li>
+                    <li><a href="#education" class="block px-6 py-3 text-white hover:bg-blue-400/10 hover:text-blue-400 transition-colors border-b border-gray-700/50">Education</a></li>
+                    <li><a href="#skills" class="block px-6 py-3 text-white hover:bg-blue-400/10 hover:text-blue-400 transition-colors border-b border-gray-700/50">Skills</a></li>
+                    <li><a href="#tools" class="block px-6 py-3 text-white hover:bg-blue-400/10 hover:text-blue-400 transition-colors border-b border-gray-700/50">Tools</a></li>
+                    <li><a href="#experience" class="block px-6 py-3 text-white hover:bg-blue-400/10 hover:text-blue-400 transition-colors border-b border-gray-700/50">Experience</a></li>
+                    <li><a href="#contact" class="block px-6 py-3 text-white hover:bg-blue-400/10 hover:text-blue-400 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="min-h-screen relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 bg-grid-white/[0.02] -z-10"></div>
+        <div class="absolute inset-0 flex items-center justify-center -z-10">
+            <div class="w-[40rem] h-[40rem] bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-full filter blur-[10rem] animate-pulse"></div>
+        </div>
+        <!-- Floating shapes -->
+        <div class="absolute top-20 left-20 w-32 h-32 bg-blue-500/20 rounded-full filter blur-xl animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-40 h-40 bg-purple-500/20 rounded-full filter blur-xl animate-float" style="animation-delay: -2s"></div>
+        <div class="absolute top-1/2 right-1/4 w-24 h-24 bg-pink-500/20 rounded-full filter blur-xl animate-float" style="animation-delay: -1s"></div>
+
+        <div class="container mx-auto px-4 py-20 relative">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="space-y-8 text-center lg:text-left max-w-2xl">
+                    <div class="inline-block">
+                        <span class="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 text-sm font-semibold mb-4 inline-block animate-float border border-blue-400/20">
+                            <i class="fas fa-code mr-2"></i>Full Stack Java Developer
+                        </span>
+                    </div>
+                    <h1 class="text-6xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient">
+                        Hi, I'm <span class="text-white">Siddesh</span>
+                    </h1>
+                    <p class="text-2xl text-gray-300 leading-relaxed">
+                        Crafting <span class="text-blue-400 font-semibold">robust</span> and <span class="text-purple-400 font-semibold">user-centric</span> web solutions with <span class="text-pink-400 font-semibold">passion</span> and precision.
+                    </p>
+                    <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
+                        <a href="#contact" 
+                           class="group px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 animate-gradient">
+                            <span class="flex items-center gap-2 text-lg font-semibold">
+                                Let's Talk
+                                <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="/profil/SiddeshResume.new.pdf" 
+                           class="group px-8 py-4 border-2 border-blue-400/50 hover:border-blue-400 rounded-lg transition-all duration-300 hover:bg-blue-400/10">
+                            <span class="flex items-center gap-2 text-lg font-semibold">
+                                <i class="fas fa-paperclip"></i>
+                                Download CV
+                            </span>
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-8 pt-8">
+                        <div class="flex items-center gap-2 bg-blue-500/10 px-4 py-2 rounded-full">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-gray-300">3.5+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-purple-500/10 px-4 py-2 rounded-full">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-gray-300">5+ Projects Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition duration-300 animate-gradient"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition duration-300 animate-gradient" style="animation-delay: -1s"></div>
+                    <img src="/profil/images/profile.png" 
+                         alt="Profile Picture" 
+                         class="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[550px] lg:h-[550px] rounded-full border-4 border-white/10 shadow-2xl animate-float">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <hr class="section-divider">
+
+    <section id="about" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <img src="/profil/images/skil/about.png" 
+                         alt="About Image" 
+                         class="rounded-2xl transform transition-all group-hover:scale-105">
+                    <div class="absolute inset-0 bg-blue-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Background</h3>
+                        <p class="text-gray-300">Hello! I'm Siddesh B M, a passionate Full Stack Java Developer.</p>
+                    </div>
+                    <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Expertise</h3>
+                        <p class="text-gray-300">I specialize in backend technologies like Java and Spring Boot.</p>
+                    </div>
+                    <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Frontend Skills</h3>
+                        <p class="text-gray-300">I craft interactive UIs with tools like React and Angular.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <hr class="section-divider">
+
+    <section id="education">
+        <div class="container" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <h2 class="section-heading text-center">Education Details</h2>
+            <div class="education-grid">
+                <!-- SSLC Card -->
+                <div class="education-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-image">
+                        <img src="/profil/images/Education/st_marys.jpeg" alt="SSLC">
+                    </div>
+                    <div class="card-content">
+                        <h3>SSLC</h3>
+                        <h4>St Mary's High School</h4>
+                        <p>Completed State level example.</p>
+                        <span class="year">2010</span>
+                    </div>
+                </div>
+    
+                <!-- Diploma Card -->
+                <div class="education-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="card-image">
+                        <img src="/profil/images/Education/stj_poly.JPEG" alt="Diploma">
+                    </div>
+                    <div class="card-content">
+                        <h3>Diploma in Electronics and Communication</h3>
+                        <h4>STJ Polytechnic College</h4>
+                        <p>Completed Diploma in Electronics and Communication Engineering.</p>
+                        <span class="year">2014</span>
+                    </div>
+                </div>
+    
+                <!-- Engineering Card -->
+                <div class="education-card" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="card-image">
+                        <img src="/profil/images/Education/sjmit.JPEG" alt="Engineering">
+                    </div>
+                    <div class="card-content">
+                        <h3>Bachelor of Engineering in Electronics and Communication</h3>
+                        <h4>STJ Institute of Technology</h4>
+                        <p>Completed Bachelor of Engineering in Electronics and Communication Engineering.</p>
+                        <span class="year">2018</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <section id="things-i-love">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">Interests</span></h6>
+            <h2 class="section-heading text-center">Things I Love</h2>
+    
+            <div class="love-card-container">
+                <div class="love-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="circle-container">
+                        <div class="circle animated-circle"><i class="bi bi-droplet-half"></i></div>
+                    </div>
+                    <p class="love-card-title">Designing</p>
+                    <p class="card-text">I love designing. When I see something that needs improvement, I enjoy
+                        making it better visually. I pay attention to every detail, whether it's a graphic or a user
+                        interface. My goal is to create designs that catch the eye and inspire others.</p>
+                </div>
+                <div class="love-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="circle-container">
+                        <div class="circle animated-circle"><i class="bi bi-code-slash"></i></div>
+                    </div>
+                    <p class="love-card-title">Developing</p>
+                    <p class="card-text">After designing, I dive into development. Coding is where I bring designs
+                        to life, turning concepts into digital experiences. Each line of code reflects my vision for
+                        functionality and elegance, showcasing my commitment to excellence.</p>
+                </div>
+                <div class="love-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="circle-container">
+                        <div class="circle animated-circle"><i class="bi bi-lightbulb"></i></div>
+                    </div>
+                    <p class="love-card-title">Problem Solving</p>
+                    <p class="card-text">I love to solve complex problems using creative solutions. Breaking down
+                        intricate challenges and finding efficient, innovative ways to overcome them is what drives
+                        me.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <hr class="section-divider">
+
+    <section id="skills" class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-transparent"></div>
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full filter blur-3xl animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute top-1/2 right-1/4 w-48 h-48 bg-pink-500/10 rounded-full filter blur-3xl animate-float" style="animation-delay: -1s"></div>
+        </div>
+        <div class="container mx-auto px-4 relative">
+            <div class="text-center mb-16">
+                <span class="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 text-sm font-semibold mb-4 inline-block animate-float border border-blue-400/20">
+                    <i class="fas fa-code mr-2"></i>Technical Expertise
+                </span>
+                <h2 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient">
+                    Technical Skills
+                </h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                    Proficient in a wide range of technologies and frameworks, delivering high-quality solutions
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Java Card -->
+                <div class="group p-8 bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-2xl hover:bg-orange-500/30 transition-all transform hover:scale-105 border border-orange-500/20 hover:shadow-xl hover:shadow-orange-500/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-orange-500/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-orange-500/40 to-red-500/40 rounded-full blur-xl group-hover:blur-2xl transition-all animate-pulse"></div>
+                            <img src="/profil/images/skil/java.svg" alt="Java" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-orange-400">Java</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-500 h-3 rounded-full animate-width relative">
+                                <div class="absolute inset-0 bg-white/20 animate-shimmer"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">Core Java, Spring Boot, Microservices</p>
+                    </div>
+                </div>
+
+                <!-- Spring Boot Card -->
+                <div class="group p-8 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 backdrop-blur-sm rounded-2xl hover:bg-emerald-500/30 transition-all transform hover:scale-105 border border-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-emerald-500/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/40 to-teal-500/40 rounded-full blur-xl group-hover:blur-2xl transition-all animate-pulse"></div>
+                            <img src="/profil/images/skil/spring-boot.svg" alt="Spring Boot" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-400">Spring Boot</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full animate-width relative">
+                                <div class="absolute inset-0 bg-white/20 animate-shimmer"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">REST APIs, Security, Data Access</p>
+                    </div>
+                </div>
+
+                <!-- Hibernate Card -->
+                <div class="group p-8 bg-gradient-to-br from-purple-500/20 to-fuchsia-500/20 backdrop-blur-sm rounded-2xl hover:bg-purple-500/30 transition-all transform hover:scale-105 border border-purple-500/20 hover:shadow-xl hover:shadow-purple-500/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-purple-500/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/40 to-fuchsia-500/40 rounded-full blur-xl group-hover:blur-2xl transition-all animate-pulse"></div>
+                            <img src="/profil/images/skil/hibernate.svg" alt="Hibernate" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">Hibernate</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-purple-500 to-fuchsia-500 h-3 rounded-full animate-width relative">
+                                <div class="absolute inset-0 bg-white/20 animate-shimmer"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">ORM Framework</p>
+                    </div>
+                </div>
+
+                <!-- Laravel Card -->
+                <div class="group p-8 bg-gradient-to-br from-rose-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl hover:bg-rose-500/30 transition-all transform hover:scale-105 border border-rose-500/20 hover:shadow-xl hover:shadow-rose-500/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-rose-500/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-rose-500/40 to-pink-500/40 rounded-full blur-xl group-hover:blur-2xl transition-all animate-pulse"></div>
+                            <img src="/profil/images/skil/laravel.svg" alt="Laravel" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-rose-400">Laravel 11</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-rose-500 to-pink-500 h-3 rounded-full animate-width relative">
+                                <div class="absolute inset-0 bg-white/20 animate-shimmer"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">MVC Framework</p>
+                    </div>
+                </div>
+
+                <!-- PHP Card -->
+                <div class="group p-8 bg-gradient-to-br from-violet-500/20 to-purple-500/20 backdrop-blur-sm rounded-2xl hover:bg-violet-500/30 transition-all transform hover:scale-105 border border-violet-500/20 hover:shadow-xl hover:shadow-violet-500/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-violet-500/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-violet-500/40 to-purple-500/40 rounded-full blur-xl group-hover:blur-2xl transition-all animate-pulse"></div>
+                            <img src="/profil/images/skil/php2.svg" alt="PHP" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-violet-400">PHP</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-violet-500 to-purple-500 h-3 rounded-full animate-width relative">
+                                <div class="absolute inset-0 bg-white/20 animate-shimmer"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">Server-Side Scripting</p>
+                    </div>
+                </div>
+
+                <!-- MySQL Card -->
+                <div class="group p-8 bg-gradient-to-br from-amber-500/20 to-yellow-500/20 backdrop-blur-sm rounded-2xl hover:bg-amber-500/30 transition-all transform hover:scale-105 border border-amber-500/20 hover:shadow-xl hover:shadow-amber-500/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-amber-500/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-amber-500/40 to-yellow-500/40 rounded-full blur-xl group-hover:blur-2xl transition-all animate-pulse"></div>
+                            <img src="/profil/images/skil/mysql-3.svg" alt="MySQL" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-amber-400">MySQL</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-amber-500 to-yellow-500 h-3 rounded-full animate-width relative">
+                                <div class="absolute inset-0 bg-white/20 animate-shimmer"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">Relational Database</p>
+                    </div>
+                </div>
+
+                <!-- HTML Card -->
+                <div class="group p-8 bg-gradient-to-br from-orange-400/20 to-amber-400/20 backdrop-blur-sm rounded-2xl hover:bg-orange-400/30 transition-all transform hover:scale-105 border border-orange-400/20 hover:shadow-xl hover:shadow-orange-400/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-orange-400/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <img src="/profil/images/skil/HTML.svg" alt="HTML" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-orange-300">HTML</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3">
+                            <div class="bg-gradient-to-r from-orange-400 to-amber-400 h-3 rounded-full animate-width" style="width: 90%"></div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">Markup Language</p>
+                    </div>
+                </div>
+
+                <!-- CSS Card -->
+                <div class="group p-8 bg-gradient-to-br from-teal-500/20 to-emerald-500/20 backdrop-blur-sm rounded-2xl hover:bg-teal-500/30 transition-all transform hover:scale-105 border border-teal-500/20 hover:shadow-xl hover:shadow-teal-500/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-teal-500/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <img src="/profil/images/skil/css.svg" alt="CSS" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-teal-300">CSS</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3">
+                            <div class="bg-gradient-to-r from-teal-500 to-emerald-500 h-3 rounded-full animate-width" style="width: 90%"></div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">Styling Language</p>
+                    </div>
+                </div>
+
+                <!-- JS Card -->
+                <div class="group p-8 bg-gradient-to-br from-yellow-400/20 to-amber-400/20 backdrop-blur-sm rounded-2xl hover:bg-yellow-400/30 transition-all transform hover:scale-105 border border-yellow-400/20 hover:shadow-xl hover:shadow-yellow-400/20">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-yellow-400/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                            <img src="/profil/images/skil/js.svg" alt="JavaScript" 
+                                 class="relative w-20 h-20 transform group-hover:scale-110 transition-transform">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-300">JS</h3>
+                        <div class="w-full bg-gray-700/50 rounded-full h-3">
+                            <div class="bg-gradient-to-r from-yellow-400 to-amber-400 h-3 rounded-full animate-width" style="width: 90%"></div>
+                        </div>
+                        <p class="text-gray-400 mt-4 text-center">Client-Side Scripting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+
+    <section id="statistics" class="py-20 relative">
+        <h1 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient">
+            Statistics
+        </h1>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-transparent"></div>
+        <div class="container mx-auto px-4 relative">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Years of Experience -->
+                <div class="text-center group">
+                    <div class="relative inline-block">
+                        <div class="absolute inset-0 bg-blue-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
+                        <div class="relative p-6 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300">
+                            <i class="fas fa-briefcase text-4xl text-blue-400 mb-4"></i>
+                            <h3 class="text-4xl font-bold text-white mb-2">3.5+</h3>
+                            <p class="text-gray-300">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Completed -->
+                <div class="text-center group">
+                    <div class="relative inline-block">
+                        <div class="absolute inset-0 bg-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
+                        <div class="relative p-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl backdrop-blur-sm hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
+                            <i class="fas fa-project-diagram text-4xl text-purple-400 mb-4"></i>
+                            <h3 class="text-4xl font-bold text-white mb-2">5+</h3>
+                            <p class="text-gray-300">Projects Completed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Happy Clients -->
+                <div class="text-center group">
+                    <div class="relative inline-block">
+                        <div class="absolute inset-0 bg-pink-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
+                        <div class="relative p-6 bg-gradient-to-br from-pink-500/20 to-red-500/20 rounded-2xl backdrop-blur-sm hover:shadow-xl hover:shadow-pink-500/20 transition-all duration-300">
+                            <i class="fas fa-smile text-4xl text-pink-400 mb-4"></i>
+                            <h3 class="text-4xl font-bold text-white mb-2">2+</h3>
+                            <p class="text-gray-300">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies -->
+                <div class="text-center group">
+                    <div class="relative inline-block">
+                        <div class="absolute inset-0 bg-red-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
+                        <div class="relative p-6 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-2xl backdrop-blur-sm hover:shadow-xl hover:shadow-red-500/20 transition-all duration-300">
+                            <i class="fas fa-code text-4xl text-red-400 mb-4"></i>
+                            <h3 class="text-4xl font-bold text-white mb-2">10+</h3>
+                            <p class="text-gray-300">Technologies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="projects" class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent"></div>
+        <div class="container mx-auto px-4 relative">
+            <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient">
+                Featured Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="/profil/images/projects/project1.jpg" alt="E-commerce Project" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">A full-featured e-commerce platform built with Spring Boot and React.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 rounded-full text-sm text-blue-300">Spring Boot</span>
+                            <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm text-purple-300">React</span>
+                            <span class="px-3 py-1 bg-green-500/20 rounded-full text-sm text-green-300">MySQL</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                            View Project
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="/profil/images/projects/project2.jpg" alt="Task Management System" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-2">Task Management System</h3>
+                        <p class="text-gray-300 mb-4">A collaborative task management system with real-time updates.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm text-purple-300">Laravel</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 rounded-full text-sm text-yellow-300">Vue.js</span>
+                            <span class="px-3 py-1 bg-blue-500/20 rounded-full text-sm text-blue-300">WebSocket</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                            View Project
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500/20 to-red-500/20 backdrop-blur-sm hover:shadow-xl hover:shadow-pink-500/20 transition-all duration-300">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="/profil/images/projects/project3.jpg" alt="Portfolio Website" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pink-400 mb-2">Portfolio Website</h3>
+                        <p class="text-gray-300 mb-4">A modern, responsive portfolio website with smooth animations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-pink-500/20 rounded-full text-sm text-pink-300">HTML5</span>
+                            <span class="px-3 py-1 bg-blue-500/20 rounded-full text-sm text-blue-300">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 rounded-full text-sm text-yellow-300">JavaScript</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-pink-400 hover:text-pink-300 transition-colors">
+                            View Project
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="tools">
+        <div class="container">
+            <div class="tools-wrapper">
+                <!-- Left Side -->
+                <div class="tools-left-side">
+                    <h6 class="text-left">WHAT I KNOW?</h6>
+                    <h2 class="section-heading text-left">Technical Tools</h2>
+                    <p class="text-left">
+                        Here are some of the technologies that are part of my current stack:
+                    </p>
+    
+                    <div class="big-card">
+                        <div class="tools-container">
+                            <div class="tool">
+                                <img class="tool-image" src="/profil/images/tools/vscode.svg" alt="vscode">
+                                <p class="tool-name">vscode</p>
+                            </div>
+                            <div class="tool">
+                                <img class="tool-image" src="/profil/images/tools/eclipse-11.svg" alt="Eclipse">
+                                <p class="tool-name">Eclipse</p>
+                            </div>
+                            <div class="tool">
+                                <img class="tool-image" src="/profil/images/tools/github.svg" alt="github">
+                                <p class="tool-name">Github</p>
+                            </div>
+                            <div class="tool">
+                                <img class="tool-image" src="/profil/images/tools/canva.svg" alt="canva">
+                                <p class="tool-name">Canva</p>
+                            </div>
+                            <div class="tool">
+                                <img class="tool-image" src="/profil/images/tools/Figma.svg" alt="Figma">
+                                <p class="tool-name">Figma</p>
+                            </div>
+                            <div class="tool">
+                                <img class="tool-image" src="/profil/images/tools/ChatGPT.svg" alt="ChatGPT">
+                                <p class="tool-name">ChatGPT</p>
+                            </div>
+                            <div class="tool">
+                                <img class="tool-image" src="/profil/images/tools/Gemini.svg" alt="Gemini">
+                                <p class="tool-name">Gemini</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right-Side Image -->
+                <div class="tools-image-wrapper">
+                    <img class="tools-image" src="/profil/images/tools/tools.JPEG" alt="Developer Illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+      
+      
+    
+
+    <hr class="section-divider">
+
+    <section id="experience" data-aos="fade-up-left" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1200">
+        <h2>Professional Experience</h2>
+        <div class="experience-pair">
+            <div class="experience-item developer">
+                <div class="experience-content">
+                    <h3>Backend Developer</h3>
+                    <h4>NagraVision Pvt. Ltd. & Foiwe Info Solution</h4>
+                    <p>
+                        <span style="font-weight: bold;">Duration:</span> 2.5 years<br />
+                        <span style="font-weight: bold;">Technologies:</span> Core Java, Spring Boot,
+                        Microservices, MySQL, Postman
+                    </p>
+                    <div class="experience-tech-icons">
+                        <i class="fab fa-java" title="Java"></i>
+                        <i class="fab fa-spring" title="Spring Boot"></i>
+                        <i class="fas fa-database" title="MySQL"></i>
+                        <i class="fas fa-microchip" title="Microservices"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="experience-item fullstack">
+                <div class="experience-content">
+                    <h3>Full Stack Developer</h3>
+                    <h4>GEM VENTURES</h4>
+                    <p>
+                        <span style="font-weight: bold;">Duration:</span> 1 year <br />
+                        <span style="font-weight: bold;">Projects:</span> GMU website designing, PUCLLGE
+                        website designing, E-commerce Application <br />
+                        <span style="font-weight: bold;">Technologies:</span> CSS, HTML, JS, PHP,
+                        Laravel 11 Framework, MySQL
+                    </p>
+                    <div class="experience-tech-icons">
+                        <i class="fab fa-css3-alt" title="CSS"></i>
+                        <i class="fab fa-html5" title="HTML"></i>
+                        <i class="fab fa-js" title="JavaScript"></i>
+                        <i class="fab fa-php" title="PHP"></i>
+                        <i class="fab fa-laravel" title="Laravel"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="contact">
+        <div class="get">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-container">
+            <!-- Form -->
+            <div class="form-container" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="cute-robot-v1">
+                    <div class="circle-bg">
+                        <div class="robot-ear left"></div>
+                        <div class="robot-head">
+                            <div class="robot-face">
+                                <div class="eyes left"></div>
+                                <div class="eyes right"></div>
+                                <div class="mouth"></div>
+                            </div>
+                        </div>
+                        <div class="robot-ear right"></div>
+                        <div class="robot-body"></div>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+    
+            <!-- Links (Updated for Vertical Layout) -->
+            <!-- <div class="center-links" data-aos="fade-up" data-aos-duration="1500">
+                <h3>Quick Links</h3>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+     -->
+            <!-- Contact Details -->
+            <div class="contact-info-container" data-aos="fade-left" data-aos-duration="1500">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-envelope"></i> <a style="color: aliceblue;" href="mailto:siddeshbm9964@gmail.com">siddeshbm9964@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a style="color: aliceblue;" href="tel:+919986674587">+91-9964573467</a></p>
+                <p style="color: aliceblue;"><i class="fas fa-map-marker-alt"></i> Davanagere, Karnataka, India</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© 2024 Siddesh. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+ 
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tools = document.querySelectorAll(".tool");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.2, // Trigger when 20% of the element is visible
+                }
+            );
+
+            tools.forEach((tool) => {
+                observer.observe(tool);
+            });
+        });
+
+
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        // Initialize AOS
+        AOS.init();
+
+        // Enhanced animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for section animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('section-transition');
+                observer.observe(section);
+            });
+
+            // Add hover effects to cards
+            document.querySelectorAll('.group').forEach(card => {
+                card.classList.add('card-hover');
+            });
+
+            // Add animated background elements
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const bg = document.createElement('div');
+                bg.className = 'animated-bg';
+                
+                // Add multiple animated elements
+                for (let i = 0; i < 3; i++) {
+                    const element = document.createElement('div');
+                    element.className = 'animated-bg-element';
+                    element.style.width = `${Math.random() * 200 + 100}px`;
+                    element.style.height = element.style.width;
+                    element.style.left = `${Math.random() * 100}%`;
+                    element.style.top = `${Math.random() * 100}%`;
+                    element.style.animationDelay = `${i * -2}s`;
+                    element.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 50%)`;
+                    bg.appendChild(element);
+                }
+                
+                section.appendChild(bg);
+            });
+
+            // Add shimmer effect to progress bars
+            document.querySelectorAll('.progress-bar').forEach(bar => {
+                const shimmer = document.createElement('div');
+                shimmer.className = 'shimmer';
+                bar.appendChild(shimmer);
+            });
+
+            // Add hover effect to buttons
+            document.querySelectorAll('a, button').forEach(btn => {
+                btn.classList.add('btn-hover-effect');
+            });
+
+            // Add glass effect to cards
+            document.querySelectorAll('.card').forEach(card => {
+                card.classList.add('glass-effect');
+            });
+
+            // Add gradient text effect to headings
+            document.querySelectorAll('h1, h2, h3').forEach(heading => {
+                heading.classList.add('text-gradient');
+            });
+
+            // Add entrance animations to elements
+            document.querySelectorAll('.education-card').forEach((card, index) => {
+                card.classList.add('animate-slide-in-left');
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            document.querySelectorAll('.skill-card').forEach((card, index) => {
+                card.classList.add('animate-scale-in');
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            document.querySelectorAll('.project-card').forEach((card, index) => {
+                card.classList.add('animate-fade-in-up');
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            // Add bounce animation to icons
+            document.querySelectorAll('.icon').forEach(icon => {
+                icon.classList.add('animate-bounce');
+            });
+
+            // Add wave animation to social media icons
+            document.querySelectorAll('.social-icon').forEach(icon => {
+                icon.classList.add('animate-wave');
+            });
+
+            // Add spin animation to loading elements
+            document.querySelectorAll('.loading').forEach(element => {
+                element.classList.add('animate-spin');
+            });
+
+            // Add rotate-in animation to tools
+            document.querySelectorAll('.tool').forEach((tool, index) => {
+                tool.classList.add('animate-rotate-in');
+                tool.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            // Add slide-in-right animation to contact form
+            document.querySelector('.form-container').classList.add('animate-slide-in-right');
+
+            // Add fade-in-up animation to contact info
+            document.querySelector('.contact-info-container').classList.add('animate-fade-in-up');
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+            // Toggle mobile menu
+            mobileMenuButton.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent click from bubbling up
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('active');
+                mobileMenuButton.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('active');
+                    mobileMenuButton.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('active');
+                    mobileMenuButton.classList.remove('active');
+                }
+            });
+
+            // Prevent menu from closing when clicking inside
+            mobileMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
