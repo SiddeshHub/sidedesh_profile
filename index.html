@@ -345,6 +345,40 @@
             opacity: 1;
             pointer-events: auto;
         }
+
+        /* Add these styles in your existing style section */
+        .background-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/profil/images/background_whait.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.1; /* Adjust this value to control the opacity */
+            animation: backgroundFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundFloat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
     </style>
     <script>
         tailwind.config = {
@@ -388,6 +422,9 @@
 </head>
 
 <body class="bg-gradient-to-br from-dark via-slate-900 to-indigo-900 text-white">
+    <div class="background-wrapper">
+        <div class="background-image"></div>
+    </div>
 
     <header class="fixed w-full top-0 z-50 bg-gray-900/80 backdrop-blur-md">
         <nav class="container mx-auto px-4">
